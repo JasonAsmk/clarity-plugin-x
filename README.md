@@ -1,6 +1,6 @@
 # capacitor-clarity-x
 
-Fork of the Microsoft Clarity plugin for android. Now implements iOS integration.
+A Capacitor plugin for Microsoft's Clarity. Should support Android and iOS.
 
 ## Install
 
