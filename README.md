@@ -13,24 +13,36 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`initialize(...)`](#initialize)
+* [`setCustomUserId(...)`](#setcustomuserid)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### initialize(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+initialize({ projectId }: { projectId: string; }) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param     | Type                                |
+| --------- | ----------------------------------- |
+| **`__0`** | <code>{ projectId: string; }</code> |
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+--------------------
+
+
+### setCustomUserId(...)
+
+```typescript
+setCustomUserId({ customUserId }: { customUserId: string; }) => Promise<void>
+```
+
+| Param     | Type                                   |
+| --------- | -------------------------------------- |
+| **`__0`** | <code>{ customUserId: string; }</code> |
 
 --------------------
 

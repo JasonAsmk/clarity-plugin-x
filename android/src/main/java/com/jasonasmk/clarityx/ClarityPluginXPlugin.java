@@ -9,14 +9,32 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 @CapacitorPlugin(name = "ClarityPluginX")
 public class ClarityPluginXPlugin extends Plugin {
 
-    private ClarityPluginX implementation = new ClarityPluginX();
 
     @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
+    public void initialize(PluginCall call) {
+        String projectId = call.getString("projectId");
+        ClarityPluginX implementation = new ClarityPluginX(getActivity());
 
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
+        Boolean result = implementation.initialize(projectId);
+
+        if(result) {
+            call.resolve();
+            return;
+        }
+        call.reject("Clarity initialization failed");
+    }
+
+    @PluginMethod
+    public void setCustomUserId(PluginCall call) {
+        String customUserId = call.getString("customUserId");
+        ClarityPluginX implementation = new ClarityPluginX(getActivity());
+
+        Boolean result = implementation.setCustomUserId(customUserId);
+
+        if(result) {
+            call.resolve();
+            return;
+        }
+        call.reject("Clarity setCustomUserId failed");
     }
 }

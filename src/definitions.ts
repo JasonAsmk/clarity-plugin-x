@@ -1,3 +1,4 @@
 export interface ClarityPluginXPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  initialize({ projectId }: { projectId: string }): Promise<void>;
+  setCustomUserId({ customUserId }: { customUserId: string }): Promise<void>;
 }
